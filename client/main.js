@@ -1,6 +1,7 @@
 import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 import * as PIXI from "pixi.js";
+import * as HANDYPIXI from 'handypixi';
 
 import "./main.html";
 
@@ -11,10 +12,11 @@ Template.hello.onCreated(function helloOnCreated() {
 
 Template.hello.onRendered(function() {
   const app = new PIXI.Application();
-
+  const object = new HANDYPIXI.Object2D();
   // The application will create a canvas element for you that you
   // can then insert into the DOM
   this.firstNode.parentNode.appendChild(app.view);
+  
 });
 
 Template.hello.helpers({
